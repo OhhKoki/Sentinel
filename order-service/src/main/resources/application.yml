@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: order-service
+
+  cloud:
+    nacos:
+      server-addr: 47.101.186.136:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8849
+      # 关闭 context 整合
+      web-context-unify: false
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.101.186.136:3306/cloud_order?useSSL=false
+    username: root
+    password: 123456
+
+mybatis:
+  type-aliases-package: com.example.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.example: info
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
