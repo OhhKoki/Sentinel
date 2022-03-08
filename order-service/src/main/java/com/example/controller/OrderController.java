@@ -25,14 +25,19 @@ public class OrderController {
 
     @GetMapping("/query")
     public String queryOrder() {
-        // 查询商品
-        orderService.queryGoods();
         return "查询订单成功";
     }
 
     @PutMapping("/update")
     public String updateOrder() {
         return "更新订单成功";
+    }
+
+    @DeleteMapping("/delete")
+    public String deleteOrder() {
+        // 查询商品
+        orderService.queryGoods();
+        return "删除订单成功";
     }
 
     @PostMapping("/insert")

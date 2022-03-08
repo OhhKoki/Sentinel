@@ -43,6 +43,17 @@ public class UserController {
     @GetMapping("/user/{id}")
     public User queryById(@PathVariable("id") Long id) {
         log.info("用户 id 为：" + id);
+
+        if (id == 2) {
+            try {
+                Thread.sleep(60);
+            }catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        }else if (id == 3) {
+            throw new RuntimeException("模拟业务异常");
+        }
+
         return userService.queryById(id);
     }
 

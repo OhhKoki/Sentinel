@@ -30,3 +30,8 @@ logging:
     com.example: info
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+
+feign:
+  sentinel:
+    # 开启 Feign 对 Sentinel 的支持
+    enabled: true
